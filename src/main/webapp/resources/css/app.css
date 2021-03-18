@@ -1,0 +1,14 @@
+*{
+	font-size: medium;
+	margin: 0px;
+	padding: 0px;
+	
+}
+
+div {
+	background-color: yellow;
+}
+
+.class1 {
+	boarder: 1px soild black;
+}
