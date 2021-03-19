@@ -6,7 +6,7 @@
 method.jsp
 <hr/>
 <div class="alert alert-primary">
-	현재 요청 방식: ${method}
+	현재 요청 방식: <sapn id="method">${method}</sapn>
 </div>
 
 <h6>&lt;form&gt;</h6>
@@ -32,9 +32,9 @@ method.jsp
 <button class="btn btn-info" onclick="sendGet()">AJAX GET 방식 요청</button>
 <script>
 const sendGet= () => {
-	$.ajax({url:"method3", method:"get"})
-		.then(response => {
-			console.log("success");
+	$.ajax({url:"ajaxMethod3", method:"get"})
+		.then(data => {
+			$("#method").html(data.method)
 		});
 };
 </script>
@@ -42,9 +42,9 @@ const sendGet= () => {
 <button class="btn btn-info" onclick="sendPost()">AJAX POST 방식 요청</button>
 <script>
 const sendPost= () => {
-	$.ajax({url:"method3", method:"post"})
-		.then(response => {
-			console.log("success");
+	$.ajax({url:"ajaxMethod3", method:"post"})
+		.then(data => {
+			$("#method").html(data.method)
 		});
 };
 </script>
@@ -52,9 +52,9 @@ const sendPost= () => {
 <button class="btn btn-info" onclick="sendPut()">AJAX PUT 방식 요청</button>
 <script>
 const sendPut= () => {
-	$.ajax({url:"method3", method:"put"})
-		.then(response => {
-			console.log("success");
+	$.ajax({url:"ajaxMethod3", method:"put"})
+		.then(data => {
+			$("#method").html(data.method)
 		});
 };
 </script>
@@ -62,9 +62,9 @@ const sendPut= () => {
 <button class="btn btn-info" onclick="sendDelete()">AJAX DELETE 방식 요청</button>
 <script>
 const sendDelete= () => {
-	$.ajax({url:"method3", method:"delete"})
-		.then(response => {
-			console.log("success");
+	$.ajax({url:"ajaxMethod3", method:"delete"})
+		.then(data => {
+			$("#method").html(data.method)
 		});
 };
 </script>
