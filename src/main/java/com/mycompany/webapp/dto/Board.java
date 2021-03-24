@@ -2,13 +2,17 @@ package com.mycompany.webapp.dto;
 
 import java.util.Date;
 
+import org.springframework.web.multipart.MultipartFile;
+
 public class Board {
 	private int bno;
 	private String btitle;
 	private String bcontent;
+	
 	private String bwriter;
 	private Date bdate;
 	private int bhitcount;
+	private MultipartFile battach;
 	private String battachoname;
 	private String battachsname;
 	private String battachtype;
@@ -65,6 +69,12 @@ public class Board {
 	}
 	public void setBattachtype(String battachtype) {
 		this.battachtype = battachtype;
+	}
+	public MultipartFile getBattach() {
+		return battach;
+	}
+	public void setBattach(MultipartFile battach) {
+		this.battach = battach;
 	}
 	
 }

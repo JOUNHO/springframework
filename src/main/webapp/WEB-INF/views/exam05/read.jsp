@@ -1,7 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
-<%@ include file="/WEB-INF/views/common/header.jsp"%>
 
 <div>
 	<div class="alert alert-success"> 
@@ -44,11 +43,10 @@
 	  
 	  
 	  <div>
-	  	<a href="list" class="btn btn-primary btn-sm">목록</a>
-	  	<a href="updateForm?bno=${board.bno}" class="btn btn-danger btn-sm">수정</a>
-	  	<a href="delete?bno=${board.bno}" class="btn btn-primary btn-sm">삭제</a>
+	  	<button onclick="getList(1)" class="btn btn-primary btn-sm">목록</button>
+	  	<button onclick="updateForm(${board.bno})" class="btn btn-danger btn-sm">수정</button>
+	  	<button onclick="deleteBoard(${board.bno})" class="btn btn-primary btn-sm">삭제</button>
 
 	  </div>
 	  
 </div>
-<%@ include file="/WEB-INF/views/common/footer.jsp"%>             
