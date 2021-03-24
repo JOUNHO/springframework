@@ -18,9 +18,9 @@
 	<c:forEach var="board" items="${list}">
 		<tr>
 			<td>${board.bno}</td>
-			<td>${board.title}</td>
-			<td>${board.content}</td>
-			<td>${board.writer}</td>
+			<td>${board.btitle}</td>
+			<td>${board.bcontent}</td>
+			<td>${board.bwriter}</td>
 		</tr>
 	</c:forEach>
 </table>

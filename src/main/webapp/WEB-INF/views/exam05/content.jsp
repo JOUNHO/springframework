@@ -87,7 +87,7 @@
 		formData.append("btitle",btitle);
 		formData.append("bcontent",bcontent);
 		if(battach){
-			formdata.append("battach",battach);
+			formData.append("battach",battach);
 		}
 		
 		$.ajax({
