@@ -37,9 +37,9 @@ public class Exam01Controller {
 		for(int i=1; i<=10; i++) {
 			Board board = new Board();
 			board.setBno(i);
-			board.setTitle("제목" + i);
-			board.setContent("내용" + i);
-			board.setWriter("spring");
+			board.setBtitle("제목" + i);
+			board.setBcontent("내용" + i);
+			board.setBwriter("spring");
 			list.add(board);
 		}
 		request.setAttribute("list", list);

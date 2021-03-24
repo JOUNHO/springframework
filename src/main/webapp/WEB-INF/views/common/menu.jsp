@@ -9,5 +9,8 @@
     <a class="nav-link text-warning" href="${pageContext.request.contextPath}/exam02/method2">리다이렉트(요청 재 지정)</a>
     <a class="nav-link text-warning" href="${pageContext.request.contextPath}/exam02/method3">요청 방식별 Controller의 메소드 실행</a>
     <a class="nav-link text-warning" href="${pageContext.request.contextPath}/exam03/content">요청 파라미터 받기</a>
+    
+    <a class="nav-link text-warning" href="${pageContext.request.contextPath}/exam04/content">DB 연동</a>
+    
   </li>
 </ul>
