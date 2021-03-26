@@ -45,9 +45,10 @@
 	  
 	  <div>
 	  	<a href="list" class="btn btn-primary btn-sm">목록</a>
+	  	<c:if test="${loginUid==board.bwriter }">
 	  	<a href="updateForm?bno=${board.bno}" class="btn btn-danger btn-sm">수정</a>
 	  	<a href="delete?bno=${board.bno}" class="btn btn-primary btn-sm">삭제</a>
-
+		</c:if>
 	  </div>
 	  
 </div>

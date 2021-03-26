@@ -4,6 +4,8 @@ public class User {
 	private String uid;
 	private String uname;
 	private String upassword;
+	private String uauthority;
+	private int uenabled;
 	private String[] uhobby;
 	private String ujob;
 	
