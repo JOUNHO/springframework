@@ -1,6 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec"%>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -19,17 +19,30 @@
             width="30" height="30" class="d-inline-block align-top">
             Spring
          </a>
-         <div>
+	<div>
             <div>
+            <%-- Session을 이용한 로그인 인증에 따른 UI 상태 선택 --%>
+            <%-- <c:if test="${loginUid == null}">
+               <a class="btn btn-success btn-sm" href="/webapp/exam07/loginForm">로그인</a>
+            </c:if>
+            <c:if test="${loginUid != null}">
+               <span class="mr-2">User: ${loginUid}</span>
+               <a class="btn btn-success btn-sm" href="/webapp/exam07/logout">로그아웃</a>
+            </c:if> --%>
             
-            	<c:if test="${loginUid == null }">
-            		<a class="btn btn-success btn-sm" href="/webapp/exam07/loginForm">로그인</a>
-            	</c:if>
-            	<c:if test="${loginUid != null }">
-            		<span class="mr-2">User:${loginUid}</span>
-            	     <a class="btn btn-success btn-sm" href="/webapp/exam07/logout">로그아웃</a>
-            	</c:if>
-                  
+            <%-- Spring Security를 이용한 로그인 인증에 따른 UI 상태 선택 --%>
+            <sec:authorize access="isAnonymous()">
+               <a class="btn btn-success btn-sm" href="${pageContext.request.contextPath}/exam08/loginForm">로그인</a>
+            </sec:authorize>
+            <sec:authorize access="isAuthenticated()">
+               <span class="mr-2">User: <sec:authentication property="name"/> </span>
+               <form method="post" class="d-inline-block" action="${pageContext.request.contextPath}/logout">
+                 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                <button class="tn btn-success btn-sm">로그아웃</button>
+             </form>
+          </sec:authorize>
+
+               
             </div>
          </div>
       </nav>
